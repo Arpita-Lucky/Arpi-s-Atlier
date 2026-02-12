@@ -1424,3 +1424,52 @@ body {
 .view-all:hover {
     text-decoration: underline;
 }
+
+/* Why Arpi's Atelier Section */
+.why-atelier {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #f9f5ff, #e9dff7);
+}
+
+.why-header h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c1e50;
+    margin-bottom: 30px;
+}
+
+.why-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.why-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    flex: 1 1 300px;
+    max-width: 300px;
+}
+
+.why-card .icon {
+    font-size: 2rem;
+    color: #7a6e92;
+    margin-bottom: 15px;
+}
+
+.why-card h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c1e50;
+    margin-bottom: 10px;
+}
+
+.why-card p {
+    font-size: 0.9rem;
+    color: #7a6e92;
+}
