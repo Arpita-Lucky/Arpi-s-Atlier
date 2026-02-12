@@ -1,743 +1,212 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Arpi's Atlier </title>
-
+    <title>Arpi's Atlier</title>
     <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
-
     <!-- Top Banner -->
+    <div class="top-banner">WELCOME TO ARPI'S ATLIER</div>
 
-    <div class="top-banner">
-
-        WELCOME TO ARPI'S ATLIER  
-
-    </div>
-
-
-
-    <!-- Header -->
-
+    <!-- Header Section -->
     <header class="main-header">
-
         <div class="header-container">
-
             <!-- Hamburger Menu -->
-
             <div class="hamburger-menu">
-
                 <span></span>
-
                 <span></span>
-
                 <span></span>
-
             </div>
 
-
-
-            <!-- Logo -->
-
+            <!-- Logo --> 
             <div class="header-logo">
-
-                <img src="imgs\logo.png" alt="Arpi's Atelier" class="logo">
-
+                <img src="imgs/logo.png" alt="Arpi's Atelier" class="logo">
             </div>
-
-
 
             <!-- Search Bar -->
-
             <div class="search-container">
-
                 <input type="text" class="search-input" placeholder="Search our collection...">
-
                 <button class="search-btn">🔍</button>
-
             </div>
 
-
-
-            <!-- Right Section -->
-
+            <!-- Account and Cart Section -->
             <div class="header-right">
-
                 <div class="account-section">
-
                     <span class="login-text">
-
-                 <a href="#" id="loginBtn">Login</a>
-
-                        or
-
-                    <a href="#" id="registerBtn">Register</a></span>
-
+                        <a href="#" id="loginBtn">Login</a> or <a href="#" id="registerBtn">Register</a>
+                    </span>
                     <span class="account-label">My Account</span>
-
                 </div>
-
                 <div class="cart-section">
-
                     <div class="cart-icon">🛒</div>
-
                     <span class="cart-count">0</span>
-
                     <span class="cart-label">Cart</span>
-
                 </div>
-
             </div>
-
         </div>
-
-
 
         <!-- Navigation Menu -->
-
-        <nav class="navbar" >
-
+        <nav class="navbar">
             <a href="#hero" class="nav-item active">Home</a>
-
             <a href="#" class="nav-item">All Products</a>
-
             <a href="#custom-orders-section" class="nav-item">Custom Orders</a>
-
-            <!-- <a href="#" class="nav-item">Special Offers</a> -->
-
             <a href="#collections-section" class="nav-item">Collections</a>
-
             <a href="#mission-section" class="nav-item">About Us</a>
-
             <a href="#footer-section" class="nav-item">Contact Us</a>
-
         </nav>
-
     </header>
 
-
-
-        <!-- Auth Overlay Card -->
-
+    <!-- Authentication Overlay -->
     <div class="overlay" id="overlay">
-
         <div class="card-container">
+            <div class="card" id="authCard">
+                <span class="close" id="closeBtn">×</span>
 
-           <div class="card" id="authCard">
+                <!-- Login Form -->
+                <div class="card-face card-front">
+                    <h2 class="auth-title">Arpi’s Atelier</h2>
+                    <p class="auth-subtitle">Made by hands, with love</p>
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <button class="auth-submit">Login</button>
+                    <p class="switch-text">Don’t have an account? <span id="toSignup">Sign up</span></p>
+                </div>
 
-             <span class="close" id="closeBtn">×</span>
-
-
-
-             <!-- LOGIN -->
-
-              <div class="card-face card-front">
-
-                <h2 class="auth-title">Arpi’s Atelier</h2>
-
-                <p class="auth-subtitle">Made by hands, with love</p>
-
-
-
-                <input type="email" placeholder="Email">
-
-                <input type="password" placeholder="Password">
-
-
-
-                <button class="auth-submit">Login</button>
-
-
-
-                <p class="switch-text">
-
-                   Don’t have an account?
-
-                   <span id="toSignup">Sign up</span>
-
-                </p>
-
+                <!-- Sign Up Form -->
+                <div class="card-face card-back">
+                    <h2 class="auth-title">Sign Up</h2>
+                    <input type="text" placeholder="Full Name">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <button class="auth-submit">Create Account</button>
+                    <p class="switch-text">Already have an account? <span id="toLogin">Login</span></p>
+                </div>
             </div>
-
-
-
-      <!-- SIGN UP -->
-
-            <div class="card-face card-back">
-
-              <h2 class="auth-title">Sign Up</h2>
-
-
-
-              <input type="text" placeholder="Full Name">
-
-              <input type="email" placeholder="Email">
-
-              <input type="password" placeholder="Password">
-
-
-
-              <button class="auth-submit">Create Account</button>
-
-
-
-              <p class="switch-text">
-
-                 Already have an account?
-
-                <span id="toLogin">Login</span>
-
-              </p>
-
-            </div>
-
         </div>
-
     </div>
 
-
-
-
-
-
-
     <!-- Hero Section -->
-
     <section class="hero" id="hero">
-
         <div class="hero-content">
-
             <h1>Bloom, Brilliance<br>and Elegance ✨</h1>
-
             <p>Handmade goods, because the pieces you own should be<br> as unique as you are 🪄</p>
-
-            <button class="shop-now-btn"> SHOP NOW </button>
-
+            <button class="shop-now-btn">SHOP NOW</button>
         </div>
-
     </section>
-
-
 
     <!-- Collection Section -->
-
     <section class="collection" id="collections-section">
-
         <div class="collection-header">
-
             <div class="header-line"></div>
-
             <h2>EXQUISITE HANDMADE PIECES</h2>
-
             <div class="header-line"></div>
-
         </div>
-
-       
 
         <div class="category-grid">
-
+            <!-- Category Cards -->
             <div class="category-card" style="background-color: #faf2fa;">
-
-                <img src="imgs\bracelets.jpeg" alt="Bracelets" class="category-image">
-
-                <div class="category-icon" style="display: none;">💍</div>
-
+                <img src="imgs/bracelets.jpeg" alt="Bracelets" class="category-image">
                 <span class="category-label">Bracelets</span>
-
             </div>
-
             <div class="category-card" style="background-color: #faf2fa;">
-
-                <img src="imgs\necklaces.jpeg" alt="Necklaces" class="category-image">
-
-                <div class="category-icon" style="display: none;">⚜️</div>
-
+                <img src="imgs/necklaces.jpeg" alt="Necklaces" class="category-image">
                 <span class="category-label">Necklaces</span>
-
             </div>
-
             <div class="category-card" style="background-color: #faf2fa;">
-
-                <img src="imgs\earrings.jpeg" alt="Earrings" class="category-image">
-
-                <div class="category-icon" style="display: none;">💎</div>
-
+                <img src="imgs/earrings.jpeg" alt="Earrings" class="category-image">
                 <span class="category-label">Earrings</span>
-
             </div>
-
             <div class="category-card" style="background-color: #faf2fa;">
-
-                <img src="imgs\rings.jpeg" alt="Rings" class="category-image">
-
-                <div class="category-icon" style="display: none;">✨</div>
-
+                <img src="imgs/rings.jpeg" alt="Rings" class="category-image">
                 <span class="category-label">Rings</span>
-
             </div>
-
             <div class="category-card" style="background-color: #faf2fa;">
-
-                <img src="imgs\phoneCharm.jpeg" alt="Phone Charms & Keychains" class="category-image">
-
-                <div class="category-icon" style="display: none;">🎀</div>
-
-                <span class="category-label">Phone Charms & <br> Keychains</span>
-
+                <img src="imgs/phoneCharm.jpeg" alt="Phone Charms & Keychains" class="category-image">
+                <span class="category-label">Phone Charms & Keychains</span>
             </div>
-
             <div class="category-card" style="background-color: #faf2fa;">
-
-                <img src="imgs\sets.jpeg" alt="Sets" class="category-image">
-
-                <div class="category-icon" style="display: none;">👑</div>
-
+                <img src="imgs/sets.jpeg" alt="Sets" class="category-image">
                 <span class="category-label">Sets</span>
-
             </div>
-
             <div class="category-card" style="background-color: #faf2fa;">
-
-                <img src="imgs\paintings.jpeg" alt="Paintings" class="category-image">
-
-                <div class="category-icon" style="display: none;">👑</div>
-
+                <img src="imgs/paintings.jpeg" alt="Paintings" class="category-image">
                 <span class="category-label">Paintings</span>
-
             </div>
-
             <div class="category-card" style="background-color: #faf2fa;">
-
                 <img src="imgs/personalized.jpeg" alt="Personalized" class="category-image">
-
-                <div class="category-icon" style="display: none;">👑</div>
-
                 <span class="category-label">Personalized</span>
-
             </div>
-
-             <div class="category-card" style="background-color: #faf2fa;">
-
-                <img src="imgs/wiredBracelets.jpeg" alt="wired Bracelets" class="category-image">
-
-                <div class="category-icon" style="display: none;">👑</div>
-
-                <span class="category-label">wired Bracelets</span>
-
+            <div class="category-card" style="background-color: #faf2fa;">
+                <img src="imgs/wiredBracelets.jpeg" alt="Wired Bracelets" class="category-image">
+                <span class="category-label">Wired Bracelets</span>
             </div>
-
         </div>
-
-       
 
         <button class="view-more-btn">VIEW MORE</button>
-
     </section>
-
-
 
     <!-- Custom Orders Section -->
-
     <section class="custom-orders" id="custom-orders-section">
-
         <div class="custom-orders-container">
-
             <div class="custom-orders-image">
-
                 <img src="imgs/custom.png" alt="Custom Orders" class="custom-img">
-
             </div>
-
             <div class="custom-orders-content">
-
                 <h2 class="custom-title">CUSTOM ORDERS</h2>
-
-                <p class="custom-text">Have a unique vision in mind? We specialize in creating bespoke, handcrafted pieces tailored to your exact specifications. From personalized designs to custom materials, let us bring your dream piece to life.</p>
-
-                <p class="custom-text">For custom articles and special requests, connect with us on Instagram!</p>
-
-                <a href="https://www.instagram.com/arpis_atelier?igsh=MXdlZnRybDk4MHNjeQ==" target="_blank" class="custom-order-btn">📷 VISIT OUR INSTAGRAM</a>
-
+                <p class="custom-text">Have a unique vision in mind? We specialize in creating bespoke, handcrafted pieces tailored to your exact specifications.</p>
+                <a href="https://www.instagram.com/arpis_atelier" target="_blank" class="custom-order-btn">📷 VISIT OUR INSTAGRAM</a>
             </div>
-
         </div>
-
     </section>
-
-
-
-    <!-- Trending Now Section -->
-
-    <section class="trending">
-
-        <div class="trending-header">
-
-            <div class="header-line"></div>
-
-            <h2>TRENDING NOW</h2>
-
-            <div class="header-line"></div>
-
-        </div>
-
-       
-
-        <div class="trending-tabs">
-
-            <button class="tab-btn active">BEST SELLINGS</button>
-
-            <span class="tab-divider">/</span>
-
-            <button class="tab-btn">NEW ARRIVALS</button>
-
-        </div>
-
-
-
-        <div class="products-grid">
-
-            <!-- Product 1 -->
-
-            <div class="product-card">
-
-                <div class="product-image-container">
-
-                    <span class="sale-badge">Sale</span>
-
-                    <span class="free-badge">FREE</span>
-
-                    <img src="https://picsum.photos/300/300?random=10" alt="Gluta Fair + Extra-C Offer" class="product-image">
-
-                </div>
-
-                <h3 class="product-name">Gluta Fair + Extra-C Offer</h3>
-
-                <div class="product-rating">
-
-                    <span class="stars">★ ★ ★ ★ ★</span>
-
-                    <span class="review-count">912 reviews</span>
-
-                </div>
-
-                <div class="product-price">
-
-                    <span class="original-price">Rs.3,690</span>
-
-                    <span class="sale-price">Rs.3,000</span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Product 2 -->
-
-            <div class="product-card">
-
-                <div class="product-image-container">
-
-                    <img src="https://picsum.photos/300/300?random=11" alt="Biotin Plus" class="product-image">
-
-                </div>
-
-                <h3 class="product-name">Biotin Plus</h3>
-
-                <div class="product-rating">
-
-                    <span class="stars">★ ★ ★ ★ ★</span>
-
-                    <span class="review-count">538 reviews</span>
-
-                </div>
-
-                <div class="product-price">
-
-                    <span class="price-label">From</span>
-
-                    <span class="current-price">Rs.1,150</span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Product 3 -->
-
-            <div class="product-card">
-
-                <div class="product-image-container">
-
-                    <img src="https://picsum.photos/300/300?random=12" alt="Magnesium Glycinate | Magnizen" class="product-image">
-
-                </div>
-
-                <h3 class="product-name">Magnesium Glycinate | Magnizen</h3>
-
-                <div class="product-rating">
-
-                    <span class="stars">★ ★ ★ ★ ★</span>
-
-                    <span class="review-count">461 reviews</span>
-
-                </div>
-
-                <div class="product-price">
-
-                    <span class="price-label">From</span>
-
-                    <span class="current-price">Rs.1,250</span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Product 4 -->
-
-            <div class="product-card">
-
-                <div class="product-image-container">
-
-                    <img src="https://picsum.photos/300/300?random=13" alt="Vitamax Women" class="product-image">
-
-                </div>
-
-                <h3 class="product-name">Vitamax Women</h3>
-
-                <div class="product-rating">
-
-                    <span class="stars">★ ★ ★ ★ ★</span>
-
-                    <span class="review-count">795 reviews</span>
-
-                </div>
-
-                <div class="product-price">
-
-                    <span class="price-label">From</span>
-
-                    <span class="current-price">Rs.1,200</span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Product 5 -->
-
-            <div class="product-card">
-
-                <div class="product-image-container">
-
-                    <img src="https://picsum.photos/300/300?random=14" alt="Nutri Collagen" class="product-image">
-
-                </div>
-
-                <h3 class="product-name">Nutri Collagen</h3>
-
-                <div class="product-rating">
-
-                    <span class="stars">★ ★ ★ ★ ★</span>
-
-                    <span class="review-count">567 reviews</span>
-
-                </div>
-
-                <div class="product-price">
-
-                    <span class="current-price">Rs.1,650</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
 
     <!-- Mission Section -->
-
     <section class="mission" id="mission-section">
-
         <div class="mission-container">
-
             <div class="mission-content">
-
                 <h2 class="mission-title">OUR MISSION - HANDCRAFTED WITH LOVE!</h2>
-
                 <p class="mission-text">At Arpi's Atelier we aim to explore the beauty of handmade artistry with innovation. We are dedicated to play our role in creating unique & meaningful pieces for you.</p>
-
-                <!-- <button class="learn-more-btn">LEARN MORE</button> -->
-
+                <button class="learn-more-btn">LEARN MORE</button>
             </div>
-
             <div class="mission-image">
-
-                <img src="imgs/me.png" alt="Our Mission" class="mission-img">
-
+                <img src="imgs\me.png" alt="Our Mission" class="mission-img">
             </div>
-
         </div>
-
     </section>
 
-
-
-    <!-- Footer -->
-
+    <!-- Footer Section -->
     <footer class="footer" id="footer-section">
-
         <div class="footer-container">
-
-            <!-- Left Section -->
-
             <div class="footer-section">
-
                 <div class="footer-logo">
-
-                    <img src="imgs/logo.png" alt="Arpi's Atelier" class="footer-logo-img">
-
+                    <img src="imgs\logo.png" alt="Arpi's Atelier" class="footer-logo-img">
                 </div>
-
                 <p class="footer-tagline">Handmade with Love,<br>Crafted for You.</p>
-
-                <div class="footer-contact">
-
-                   <p><span class="contact-icon">📞</span> 08007772</p>  
-
-                    <!-- <p><span class="contact-icon">✉️</span> info@arpisatelier.com</p> -->
-
-                <!-- </div>
-
-                <div class="footer-social">
-
-                    <a href="#" class="social-icon"> </a>
-
-                    <a href="#" class="social-icon">�</a>
-
-                    <a href="#" class="social-icon">▶️</a>
-
-                    <a href="#" class="social-icon">🐦</a>
-
-                    <a href="#" class="social-icon">💼</a>
-
-                </div>
-
             </div>
 
-
-
-            <!-- Arpi's Atelier Section -->
-
             <div class="footer-section">
-
                 <h3 class="footer-heading">ARPI'S ATELIER</h3>
-
                 <ul class="footer-links">
-
                     <li><a href="#">About Us</a></li>
-
                     <li><a href="#">Contact Us</a></li>
-
                 </ul>
-
             </div>
 
-
-
-            <!-- Shop Section -->
-
             <div class="footer-section">
-
                 <h3 class="footer-heading">SHOP</h3>
-
                 <ul class="footer-links">
-
                     <li><a href="#">All Products</a></li>
-
                     <li><a href="#">Best Selling</a></li>
-
                     <li><a href="#">New Arrivals</a></li>
-
-                    <li><a href="#">Offers</a></li>
-
-                <!--    <li><a href="#">Track Your Order</a></li>  -->
-
                 </ul>
-
             </div>
-
-
-
-            <!-- Help & Terms Section -->
-
-            <div class="footer-section">
-
-                <h3 class="footer-heading">HELP & TERMS</h3>
-
-                <ul class="footer-links">
-
-                  <!--  <li><a href="#">Shipping Policy</a></li>
-
-                    <li><a href="#">Return & Refund</a></li>
-
-                    <li><a href="#">Terms Of Service</a></li>
-
-                    <li><a href="#">Privacy Policy</a></li> -->
-
-                     <li><a href="#">Disclaimers</a></li>
-
-                </ul>
-
-            </div>
-
-
-
-            <!-- Newsletter Section -->
-
-            <!-- <div class="footer-section">
-
-                <h3 class="footer-heading">NEWSLETTER SIGN UP</h3>
-
-                <p class="newsletter-text">Receive the latest updates about our products and promotions.</p>
-
-                <div class="newsletter-form">
-
-                    <input type="email" placeholder="Enter your email" class="newsletter-input">
-
-                    <button class="newsletter-btn">SUBMIT</button>
-
-                </div>
-
-            </div> -->
-
         </div>
-
     </footer>
 
- 
-
     <script src="script.js"></script>
-
-   
-
 </body>
 
 </html>
