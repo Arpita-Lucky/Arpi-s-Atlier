@@ -1,4 +1,3 @@
-
 /**
  * ============================================================================
  * ARPI'S ATELIER - INTERACTIVE FEATURES
@@ -117,7 +116,6 @@ const toLogin = document.getElementById('toLogin');
  */
 function openAuth(flip) {
     overlay.style.display = 'flex';
-    authCard.style.animation = 'dropDown 0.6s ease-out, swing 3s ease-in-out infinite 0.6s';
     if (flip) {
         authCard.classList.add('flipped');
     } else {
@@ -163,6 +161,11 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && overlay.style.display === 'flex') {
         closeAuth();
     }
+});
+
+// Add event listener to the "Sign up" text
+toSignup.addEventListener("click", () => {
+    authCard.classList.add("show-signup");
 });
 
 
