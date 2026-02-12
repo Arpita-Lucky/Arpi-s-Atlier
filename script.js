@@ -39,7 +39,7 @@ navItems.forEach(item => {
 const hero = document.getElementById('hero');
 const heroImages = [
     'imgs/landingPage.jpeg',
-    'imgs/hero2.png',
+    'imgs/hero2.jpg',
     'imgs/hero3.png'
 ];
 let heroImageIndex = 0;
