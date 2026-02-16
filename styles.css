@@ -2170,3 +2170,412 @@ body {
         width: 100%;
     }
 }
+
+/* ============================================================================
+   DESIGN STUDIO STYLES
+   ============================================================================ */
+
+.design-studio {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.studio-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.studio-tagline {
+    font-size: 14px;
+    color: #d4169f;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.studio-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.studio-subtitle {
+    font-size: 16px;
+    color: #999;
+}
+
+/* Step Tracker */
+.step-tracker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0 60px 0;
+    gap: 20px;
+}
+
+.step {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    background: #e8e8e8;
+    color: #999;
+    transition: all 0.3s ease;
+}
+
+.step.active {
+    background: linear-gradient(135deg, #d4169f, #e835c5);
+    color: white;
+    box-shadow: 0 4px 12px rgba(212, 22, 159, 0.3);
+}
+
+.step-line {
+    width: 80px;
+    height: 2px;
+    background: #e8e8e8;
+    transition: background 0.3s ease;
+}
+
+.step-line.active {
+    background: linear-gradient(135deg, #d4169f, #e835c5);
+}
+
+/* Selection Container */
+.selection-container {
+    margin-bottom: 60px;
+}
+
+.selection-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+}
+
+/* Type Grid */
+.type-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.type-card {
+    padding: 30px;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.type-card:hover {
+    border-color: #d4169f;
+    box-shadow: 0 4px 12px rgba(212, 22, 159, 0.1);
+}
+
+.type-card.active {
+    border: 3px solid #d4169f;
+    background: #faf8fc;
+    box-shadow: 0 8px 20px rgba(212, 22, 159, 0.2);
+}
+
+.type-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.type-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    display: block;
+}
+
+/* Material Selection */
+.material-selection {
+    animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.material-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.material-card {
+    padding: 20px;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.material-card:hover {
+    border-color: #d4169f;
+    box-shadow: 0 4px 12px rgba(212, 22, 159, 0.1);
+}
+
+.material-card.active {
+    border: 3px solid #d4169f;
+    background: #faf8fc;
+}
+
+.material-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 8px 0;
+}
+
+.material-price {
+    font-size: 14px;
+    color: #999;
+    margin: 0;
+}
+
+.material-card.active .material-name {
+    color: #d4169f;
+}
+
+/* Gemstone Selection */
+.gemstone-selection {
+    animation: slideDown 0.3s ease-in-out;
+}
+
+.gemstone-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+}
+
+.gemstone-card {
+    padding: 20px;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+    text-align: center;
+}
+
+.gemstone-card:hover {
+    border-color: #d4169f;
+    box-shadow: 0 4px 12px rgba(212, 22, 159, 0.1);
+}
+
+.gemstone-card.active {
+    border: 3px solid #d4169f;
+    background: #faf8fc;
+}
+
+.gemstone-color {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gemstone-color.amethyst {
+    background: #9370DB;
+}
+
+.gemstone-color.moonstone {
+    background: #B0E0E6;
+}
+
+.gemstone-color.rose-quartz {
+    background: #FFB6C1;
+}
+
+.gemstone-color.peridot {
+    background: #ADFF2F;
+}
+
+.gemstone-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 10px 0 5px 0;
+}
+
+.gemstone-price {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+}
+
+.gemstone-card.active .gemstone-name {
+    color: #d4169f;
+}
+
+/* Engraving Section */
+.engraving-section {
+    animation: slideDown 0.3s ease-in-out;
+    margin: 40px 0;
+}
+
+.engraving-input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e8e8e8;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease;
+    margin-bottom: 8px;
+}
+
+.engraving-input:focus {
+    outline: none;
+    border-color: #d4169f;
+    box-shadow: 0 0 0 3px rgba(212, 22, 159, 0.1);
+}
+
+.character-count {
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+    margin: 0;
+}
+
+/* Custom Design Summary */
+.custom-design-summary {
+    animation: slideDown 0.3s ease-in-out;
+    margin-top: 50px;
+}
+
+.summary-card {
+    background: linear-gradient(135deg, #f0d4e8, #e8d0f5);
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-details {
+    margin-bottom: 30px;
+}
+
+.summary-details p {
+    font-size: 16px;
+    color: #5a5a5a;
+    margin: 12px 0;
+}
+
+.summary-label {
+    font-weight: 600;
+    color: #7a7a7a;
+}
+
+.summary-details p span:last-child {
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+.summary-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 2px solid rgba(212, 22, 159, 0.2);
+}
+
+.summary-price {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.base-price {
+    font-size: 12px;
+    color: #999;
+}
+
+.total-price {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.add-custom-btn {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #d4169f, #e835c5);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.add-custom-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 22, 159, 0.3);
+}
+
+.add-custom-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .studio-title {
+        font-size: 32px;
+    }
+
+    .type-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .material-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gemstone-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .step-tracker {
+        gap: 10px;
+    }
+
+    .step-line {
+        width: 40px;
+    }
+
+    .summary-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .add-custom-btn {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,4 +1,92 @@
-<link rel="stylesheet" href="styles.css">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Design Your Dream Piece | Arpi's Atelier</title>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">WELCOME TO ARPI'S ATLIER</div>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Hamburger Menu -->
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Logo --> 
+            <div class="header-logo">
+                <img src="imgs/logo.png" alt="Arpi's Atelier" class="logo">
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search our collection...">
+                <button class="search-btn">🔍</button>
+            </div>
+
+            <!-- Account and Cart Section -->
+            <div class="header-right">
+                <div class="account-section">
+                    <span class="login-text">
+                        <a href="#" id="loginBtn">Login</a> or <a href="#" id="registerBtn">Register</a>
+                    </span>
+                    <span class="account-label">My Account</span>
+                </div>
+                <div class="cart-section">
+                    <div class="cart-icon">🛒</div>
+                    <span class="cart-count">0</span>
+                    <span class="cart-label">Cart</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="navbar">
+            <a href="index.html" class="nav-item active">Home</a>
+            <a href="index.html" class="nav-item all-products-link">All Products</a>
+            <a href="#custom-orders-section" class="nav-item">Custom Orders</a>
+            <a href="#collections-section" class="nav-item">Collections</a>
+            <a href="#mission-section" class="nav-item">About Us</a>
+            <a href="design-your-dream-piece.html" class="nav-item">Design and Surprise</a>
+            <a href="#footer-section" class="nav-item">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Authentication Overlay -->
+    <div class="overlay" id="overlay">
+        <div class="card-container">
+            <div class="card" id="authCard">
+                <span class="close" id="closeBtn">×</span>
+
+                <!-- Login Form -->
+                <div class="card-face card-front">
+                    <h2 class="auth-title">Arpi's Atelier</h2>
+                    <p class="auth-subtitle">Made by hands, with love</p>
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <button class="auth-submit">Login</button>
+                    <p class="switch-text">Don't have an account? <span id="toSignup">Sign up</span></p>
+                </div>
+
+                <!-- Sign Up Form -->
+                <div class="card-face card-back">
+                    <h2 class="auth-title">Sign Up</h2>
+                    <input type="text" placeholder="Full Name">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <button class="auth-submit">Create Account</button>
+                    <p class="switch-text">Already have an account? <span id="toLogin">Login</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 <section class="design-studio">
     <div class="studio-header">
@@ -58,5 +146,326 @@
                 </div>
             </div>
         </div>
+
+        <div class="gemstone-selection" id="gemstone-selection" style="display: none;">
+            <h2 class="selection-title">3. Add Gemstone</h2>
+            <div class="gemstone-grid">
+                <div class="gemstone-card active">
+                    <p class="gemstone-name">No gemstone</p>
+                </div>
+                <div class="gemstone-card">
+                    <span class="gemstone-color amethyst"></span>
+                    <p class="gemstone-name">Amethyst</p>
+                    <p class="gemstone-price">+$25</p>
+                </div>
+                <div class="gemstone-card">
+                    <span class="gemstone-color moonstone"></span>
+                    <p class="gemstone-name">Moonstone</p>
+                    <p class="gemstone-price">+$30</p>
+                </div>
+                <div class="gemstone-card">
+                    <span class="gemstone-color rose-quartz"></span>
+                    <p class="gemstone-name">Rose Quartz</p>
+                    <p class="gemstone-price">+$20</p>
+                </div>
+                <div class="gemstone-card">
+                    <span class="gemstone-color peridot"></span>
+                    <p class="gemstone-name">Peridot</p>
+                    <p class="gemstone-price">+$28</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="engraving-section" id="engraving-section" style="display: none;">
+            <h2 class="selection-title">Engraving (optional)</h2>
+            <input type="text" id="engraving-input" class="engraving-input" placeholder="Up to 20 characters" maxlength="20">
+            <p class="character-count"><span id="char-count">0</span>/20 characters</p>
+        </div>
+
+        <div class="custom-design-summary" id="custom-design-summary" style="display: none;">
+            <h2 class="selection-title">Your Custom Design</h2>
+            <div class="summary-card">
+                <div class="summary-details">
+                    <p><span class="summary-label">Type:</span> <span id="summary-type">-</span></p>
+                    <p><span class="summary-label">Material:</span> <span id="summary-material">-</span></p>
+                    <p><span class="summary-label">Gemstone:</span> <span id="summary-gemstone">-</span></p>
+                    <p><span class="summary-label">Engraving:</span> <span id="summary-engraving">-</span></p>
+                </div>
+                <div class="summary-footer">
+                    <div class="summary-price">
+                        <span class="base-price">Base: Rs 100</span>
+                        <span class="total-price" id="summary-total">Rs 100</span>
+                    </div>
+                    <button class="add-custom-btn" onclick="addCustomToCart()">Add to Cart ✨</button>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+
+    <!-- Footer Section -->
+    <footer class="footer" id="footer-section">
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-section about">
+                <h3 class="footer-heading">✨ Arpi's Atelier</h3>
+                <p>Handcrafted goods made with love and stardust. Every piece tells a story.</p>
+            </div>
+
+            <!-- Shop Links -->
+            <div class="footer-section shop">
+                <h3 class="footer-heading">Shop</h3>
+                <ul class="footer-links">
+                    <li><a href="#">All Jewelry</a></li>
+                    <li><a href="#">Necklaces</a></li>
+                    <li><a href="#">Earrings</a></li>
+                    <li><a href="#">Rings</a></li>
+                </ul>
+            </div>
+
+            <!-- About Links -->
+            <div class="footer-section about-links">
+                <h3 class="footer-heading">About</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Custom Design</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Connect Links -->
+            <div class="footer-section connect">
+                <h3 class="footer-heading">Connect</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Pinterest</a></li>
+                    <li><a href="mailto:hello@arpisatelier.com">hello@arpisatelier.com</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Arpi's Atelier. Made with ♡ and recycled silver.</p>
+            <p>✨ Every purchase plants a tree ✨</p>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>Shopping Cart</h2>
+                <button class="cart-close-btn" onclick="closeCart()">×</button>
+            </div>
+            <div class="cart-items-container" id="cartItemsContainer">
+                <!-- Cart items will be rendered here -->
+            </div>
+            <div class="cart-modal-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="total-price">Rs 0</span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal Overlay -->
+    <div class="cart-modal-overlay" id="cartModalOverlay" onclick="closeCart()"></div>
+
+    <script src="script.js"></script>
+    <script>
+        // Design Studio Interactivity
+        let customDesign = {
+            type: null,
+            material: null,
+            gemstone: null,
+            engraving: '',
+            materialPrice: 0,
+            gemstonePrice: 0
+        };
+
+        const basePrice = 100;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const typeCards = document.querySelectorAll('.type-card');
+            const materialCards = document.querySelectorAll('.material-card');
+            const gemstoneCards = document.querySelectorAll('.gemstone-card');
+            const engravingInput = document.getElementById('engraving-input');
+            const charCount = document.getElementById('char-count');
+            
+            const materialSelection = document.getElementById('material-selection');
+            const gemstoneSelection = document.getElementById('gemstone-selection');
+            const engravingSection = document.getElementById('engraving-section');
+            const customDesignSummary = document.getElementById('custom-design-summary');
+            
+            const typeGrid = document.querySelector('.type-grid');
+            const steps = document.querySelectorAll('.step');
+            const stepLines = document.querySelectorAll('.step-line');
+
+            // Handle type card selection
+            typeCards.forEach((card, index) => {
+                card.addEventListener('click', () => {
+                    typeCards.forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    
+                    customDesign.type = card.querySelector('.type-name').textContent;
+                    
+                    materialSelection.style.display = 'block';
+                    gemstoneSelection.style.display = 'none';
+                    engravingSection.style.display = 'none';
+                    customDesignSummary.style.display = 'none';
+                    
+                    steps[0].classList.add('active');
+                    steps[1].classList.add('active');
+                    steps[2].classList.remove('active');
+                    stepLines[0].classList.add('active');
+                    stepLines[1].classList.remove('active');
+
+                    setTimeout(() => {
+                        materialSelection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+                });
+            });
+
+            // Handle material card selection
+            materialCards.forEach((card) => {
+                card.addEventListener('click', () => {
+                    materialCards.forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    
+                    customDesign.material = card.querySelector('.material-name').textContent;
+                    const priceText = card.querySelector('.material-price').textContent;
+                    customDesign.materialPrice = priceText.includes('Included') ? 0 : parseInt(priceText.replace(/\$|Rs /g, ''));
+                    
+                    gemstoneSelection.style.display = 'block';
+                    engravingSection.style.display = 'none';
+                    customDesignSummary.style.display = 'none';
+                    
+                    steps[1].classList.add('active');
+                    steps[2].classList.add('active');
+                    stepLines[1].classList.add('active');
+
+                    setTimeout(() => {
+                        gemstoneSelection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+
+                    updateSummary();
+                });
+            });
+
+            // Handle gemstone card selection
+            gemstoneCards.forEach((card) => {
+                card.addEventListener('click', () => {
+                    gemstoneCards.forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    
+                    customDesign.gemstone = card.querySelector('.gemstone-name').textContent;
+                    const priceText = card.querySelector('.gemstone-price')?.textContent;
+                    customDesign.gemstonePrice = priceText ? parseInt(priceText.replace(/\$|Rs /g, '')) : 0;
+                    
+                    engravingSection.style.display = 'block';
+                    customDesignSummary.style.display = 'block';
+                    
+                    steps[2].classList.add('active');
+                    stepLines[1].classList.add('active');
+
+                    setTimeout(() => {
+                        engravingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+
+                    updateSummary();
+                });
+            });
+
+            // Handle engraving input
+            engravingInput.addEventListener('input', (e) => {
+                customDesign.engraving = e.target.value;
+                charCount.textContent = e.target.value.length;
+                updateSummary();
+            });
+
+            // Update summary display
+            function updateSummary() {
+                document.getElementById('summary-type').textContent = customDesign.type || '-';
+                document.getElementById('summary-material').textContent = customDesign.material || '-';
+                document.getElementById('summary-gemstone').textContent = customDesign.gemstone || '-';
+                document.getElementById('summary-engraving').textContent = customDesign.engraving || 'None';
+                
+                const totalPrice = basePrice + customDesign.materialPrice + customDesign.gemstonePrice;
+                document.getElementById('summary-total').textContent = `Rs ${totalPrice}`;
+            }
+        });
+
+        // Add custom design to cart
+        function addCustomToCart() {
+            // Validate that all selections are made
+            if (!customDesign.type) {
+                showCartNotification('Please select a jewelry type');
+                return;
+            }
+            if (!customDesign.material) {
+                showCartNotification('Please select a material');
+                return;
+            }
+            if (!customDesign.gemstone) {
+                showCartNotification('Please select a gemstone option');
+                return;
+            }
+
+            const totalPrice = basePrice + customDesign.materialPrice + customDesign.gemstonePrice;
+            
+            const customProduct = {
+                id: Date.now(),
+                title: `Custom ${customDesign.type}`,
+                category: 'custom-design',
+                material: customDesign.material,
+                gemstone: customDesign.gemstone,
+                engraving: customDesign.engraving || 'None',
+                price: totalPrice,
+                image: 'imgs/custom-design.png',
+                description: `Custom ${customDesign.type} with ${customDesign.material}, ${customDesign.gemstone}${customDesign.engraving ? ', engraved: ' + customDesign.engraving : ''}`,
+                rating: 5,
+                reviews: 0,
+                quantity: 1
+            };
+
+            // Get current cart from localStorage
+            let currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Add to cart
+            currentCart.push(customProduct);
+            localStorage.setItem('cart', JSON.stringify(currentCart));
+            
+            // Update cart count
+            const cartCount = document.querySelector('.cart-count');
+            let count = parseInt(cartCount.textContent) || 0;
+            cartCount.textContent = count + 1;
+            
+            // Show success message
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 80px;
+                right: 20px;
+                background: #4CAF50;
+                color: white;
+                padding: 15px 20px;
+                border-radius: 4px;
+                z-index: 1000;
+                font-weight: bold;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            `;
+            notification.textContent = `Custom ${customDesign.type} added to cart! Rs ${totalPrice}`;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => notification.remove(), 2000);
+            
+            // Reset form after 2 seconds
+            setTimeout(() => {
+                location.reload();
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
