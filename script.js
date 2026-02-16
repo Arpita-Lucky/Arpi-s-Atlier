@@ -570,10 +570,10 @@ function filterProducts() {
     if (activeFilters.prices.length > 0) {
         filtered = filtered.filter(p => {
             return activeFilters.prices.some(priceRange => {
-                if (priceRange === '0-60') return p.price < 60;
-                if (priceRange === '60-90') return p.price >= 60 && p.price < 90;
-                if (priceRange === '90-150') return p.price >= 90 && p.price < 150;
-                if (priceRange === '150+') return p.price >= 150;
+                if (priceRange === '0-300') return p.price < 300;
+                if (priceRange === '300-500') return p.price >= 300 && p.price < 500;
+                if (priceRange === '500-700') return p.price >= 500 && p.price < 700;
+                if (priceRange === '700+') return p.price >= 700;
                 return false;
             });
         });
@@ -761,6 +761,85 @@ function updateQuantity(productId, change) {
 cartSection.addEventListener('click', (e) => {
     e.preventDefault();
     openCart();
+});
+
+// ============================================================================
+// 11. SEARCH FUNCTIONALITY
+// ============================================================================
+
+const searchInput = document.querySelector('.search-input');
+const searchBtn = document.querySelector('.search-btn');
+
+/**
+ * Search products by title, description, material, and category
+ * @param {string} query - Search query string
+ * @returns {Array} - Filtered products matching the search query
+ */
+function searchProducts(query) {
+    if (!query.trim()) {
+        return productDatabase;
+    }
+    
+    const lowercaseQuery = query.toLowerCase();
+    
+    return productDatabase.filter(product => 
+        product.title.toLowerCase().includes(lowercaseQuery) ||
+        product.description.toLowerCase().includes(lowercaseQuery) ||
+        product.material.toLowerCase().includes(lowercaseQuery) ||
+        product.category.toLowerCase().includes(lowercaseQuery)
+    );
+}
+
+/**
+ * Handle search action and display results
+ */
+function handleSearch() {
+    const query = searchInput.value;
+    const results = searchProducts(query);
+    
+    // Show products section
+    showAllProducts();
+    
+    // Render search results
+    renderProducts(results);
+    
+    // Update page title to show search query
+    const resultsInfo = document.querySelector('.results-info');
+    if (resultsInfo) {
+        resultsInfo.innerHTML = `
+            <h2>Search Results</h2>
+            <p class="results-count">Searching for: "${query}" - <span id="product-count">${results.length}</span> pieces found</p>
+        `;
+    }
+}
+
+// Search on button click
+searchBtn.addEventListener('click', handleSearch);
+
+// Search on Enter key
+searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        handleSearch();
+    }
+});
+
+// Real-time search suggestions (optional - show results as user types)
+searchInput.addEventListener('input', (e) => {
+    const query = e.target.value;
+    // Clear search on empty input
+    if (query.length === 0) {
+        // Reset to show all products or home page
+        if (allProductsSection.style.display === 'block') {
+            renderProducts(productDatabase);
+            const resultsInfo = document.querySelector('.results-info');
+            if (resultsInfo) {
+                resultsInfo.innerHTML = `
+                    <h2>Our Collection</h2>
+                    <p class="results-count"><span id="product-count">${productDatabase.length}</span> pieces found</p>
+                `;
+            }
+        }
+    }
 });
 
 
