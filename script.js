@@ -413,6 +413,18 @@ allProductsLink.addEventListener('click', (e) => {
     renderProducts(productDatabase);
 });
 
+// Handle Collections link click
+const collectionsLink = document.querySelector('a[href="#collections-section"]');
+if (collectionsLink) {
+    collectionsLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        showHome();
+        setTimeout(() => {
+            collectionsSection.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+    });
+}
+
 // Handle Home link click
 document.querySelectorAll('.nav-item').forEach(item => {
     if (item.textContent.trim() === 'Home') {
