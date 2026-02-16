@@ -193,48 +193,49 @@
             <!-- Card 1 -->
             <div class="featured-card">
                 <div class="badge">Bestseller</div>
-                <img src="imgs/celestial-moon-pendant.png" alt="Celestial Moon Pendant" class="featured-image">
-                <button class="add-to-cart">Add to Cart</button>
-                <p class="material">Sterling Silver</p>
-                <h3 class="product-title">Celestial Moon Pendant</h3>
-                <p class="product-description">Handcrafted crescent moon with star details</p>
-                <p class="price">$89</p>
+                <img src="imgs/simple-black-beaded-bracelets.jpeg" alt="simple black beaded bracelet" class="featured-image">
+                <button class="add-to-cart" onclick="addToCart(1)">Add to Cart</button>
+                <p class="material">Wired</p>
+                <h3 class="product-title">simple black beaded bracelet</h3>
+                <p class="product-description">Handcrafted simple black beaded bracelet, per bracelet 200</p>
+                <p class="price">Rs 200</p>
                 <p class="rating">⭐ 4.9 (47)</p>
             </div>
 
             <!-- Card 2 -->
             <div class="featured-card">
                 <div class="badge new">New</div>
-                <img src="imgs/garden-fairy-earrings.png" alt="Garden Fairy Earrings" class="featured-image">
-                <button class="add-to-cart">Add to Cart</button>
-                <p class="material">14K Gold</p>
-                <h3 class="product-title">Garden Fairy Earrings</h3>
-                <p class="product-description">Flower-shaped with enchanted garden vibes</p>
-                <p class="price">$65</p>
+                <img src="imgs/simple-everyday-earrings.jpeg" alt="simple everyday Earrings" class="featured-image">
+                <button class="add-to-cart" onclick="addToCart(2)">Add to Cart</button>
+                <p class="material">Wired</p>
+                <h3 class="product-title">simple everyday Earrings</h3>
+                <p class="product-description">Lightweight and versatile earrings perfect for daily wear</p>
+                <p class="price">Rs 200</p>
                 <p class="rating">⭐ 4.8 (32)</p>
             </div>
 
             <!-- Card 3 -->
             <div class="featured-card">
                 <div class="badge">Bestseller</div>
-                <img src="imgs/stardust-bracelet.png" alt="Stardust Bracelet" class="featured-image">
-                <button class="add-to-cart">Add to Cart</button>
-                <p class="material">Rose Gold</p>
-                <h3 class="product-title">Stardust Bracelet</h3>
-                <p class="product-description">Rose gold chain with stardust disc charms</p>
-                <p class="price">$78</p>
+                <img src="imgs/twin-bracelets-butterfly-charm.jpeg" alt="twin Bracelets with butterfly charm" class="featured-image">
+                <button class="add-to-cart" onclick="addToCart(3)">Add to Cart</button>
+                <p class="material">elastic</p>
+                <h3 class="product-title">twin Bracelets with butterfly charm</h3>
+                <p class="product-description">Matching twin bracelets with delicate butterfly charm, perfect for best friends</p>
+                <p class="price">Rs 300</p>
                 <p class="rating">⭐ 4.7 (28)</p>
             </div>
 
             <!-- Card 4 -->
             <div class="featured-card">
-                <img src="imgs/orbit-ring.png" alt="Orbit Ring" class="featured-image">
-                <button class="add-to-cart">Add to Cart</button>
-                <p class="material">Recycled Silver</p>
-                <h3 class="product-title">Orbit Ring</h3>
-                <p class="product-description">Minimalist ring with orbiting sphere detail</p>
-                <p class="price">$55</p>
-                <p class="rating">⭐ 4.9 (53)</p>
+                <div class="badge">Bestseller</div>
+                <img src="imgs/matching-bracelets-magnetic-heart.jpeg" alt="matching bracelets with magnetic heart" class="featured-image">
+                <button class="add-to-cart" onclick="addToCart(9)">Add to Cart</button>
+                <p class="material">wired</p>
+                <h3 class="product-title">matching bracelets with magnetic heart</h3>
+                <p class="product-description">Elegant matching bracelets with magnetic heart charm, perfect for couples</p>
+                <p class="price">Rs 500</p>
+                <p class="rating">⭐ 4.9 (88)</p>
             </div>
         </div>
 
@@ -282,6 +283,10 @@
                             <input type="checkbox" name="category" value="matching-bracelets" class="category-filter">
                             <span>Matching Bracelets</span>
                         </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="category" value="paintings" class="category-filter">
+                            <span>Paintings</span>
+                        </label>
                     </div>
                 </div>
 
@@ -307,6 +312,10 @@
                         <label class="filter-checkbox">
                             <input type="checkbox" name="material" value="Beads" class="material-filter">
                             <span>Beads</span>
+                        </label>
+                         <label class="filter-checkbox">
+                            <input type="checkbox" name="material" value="Canvas" class="material-filter">
+                            <span>Canvas</span>
                         </label>
                     </div>
                 </div>
@@ -437,6 +446,29 @@
             <p>✨ Every purchase plants a tree ✨</p>
         </div>
     </footer>
+
+    <!-- Cart Sidebar Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>Shopping Cart</h2>
+                <button class="cart-close-btn" onclick="closeCart()">×</button>
+            </div>
+            <div class="cart-items-container" id="cartItemsContainer">
+                <!-- Cart items will be rendered here -->
+            </div>
+            <div class="cart-modal-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="total-price">Rs 0</span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal Overlay -->
+    <div class="cart-modal-overlay" id="cartModalOverlay" onclick="closeCart()"></div>
 
     <script src="script.js"></script>
 </body>

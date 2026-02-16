@@ -40,7 +40,7 @@ const hero = document.getElementById('hero');
 const heroImages = [
     'imgs/landingPage.jpeg',
     'imgs/hero2.jpg',
-    'imgs/hero3.png'
+    'imgs/hero3.jpeg'
 ];
 let heroImageIndex = 0;
 
@@ -230,132 +230,121 @@ document.addEventListener('DOMContentLoaded', () => {
 const productDatabase = [
     {
         id: 1,
-        title: 'Celestial Moon Pendant',
-        category: 'necklaces',
+        title: 'simple black beaded bracelet',
+        category: 'bracelets',
         material: 'Wired',
-        price: 89,
-        image: 'imgs/celestial-moon-pendant.png',
-        description: 'Handcrafted crescent moon with star details',
+        price: 200,
+        image: 'imgs/simple-black-beaded-bracelets.jpeg',
+        description: 'Handcrafted simple black beaded bracelet, per bracelet 200',
         rating: 4.9,
         reviews: 47,
         badge: 'Bestseller'
     },
     {
         id: 2,
-        title: 'Garden Fairy Earrings',
+        title: 'simple everyday Earrings',
         category: 'earrings',
-        material: 'Beads',
-        price: 65,
-        image: 'imgs/garden-fairy-earrings.png',
-        description: 'Flower-shaped with enchanted garden vibes',
+        material: 'Wired',
+        price: 200,
+        image: 'imgs/simple-everyday-earrings.jpeg',
+        description: 'Lightweight and versatile earrings perfect for daily wear',
         rating: 4.8,
         reviews: 32,
         badge: 'New'
     },
     {
         id: 3,
-        title: 'Stardust Bracelet',
+        title: 'twin Bracelets with butterfly charm',
         category: 'bracelets',
-        material: 'Stones',
-        price: 78,
-        image: 'imgs/stardust-bracelet.png',
-        description: 'Rose gold chain with stardust disc charms',
+        material: 'elastic',
+        price: 300,
+        image: 'imgs/twin-bracelets-butterfly-charm.jpeg',
+        description: 'Matching twin bracelets with delicate butterfly charm, perfect for best friends',
         rating: 4.7,
         reviews: 28,
         badge: 'Bestseller'
     },
-    {
-        id: 4,
-        title: 'Orbit Ring',
-        category: 'rings',
-        material: 'Wired',
-        price: 55,
-        image: 'imgs/orbit-ring.png',
-        description: 'Minimalist ring with orbiting sphere detail',
-        rating: 4.9,
-        reviews: 53,
-        badge: null
-    },
+    
     {
         id: 5,
-        title: 'Petal Drop Necklace',
+        title: 'blue and white Necklace',
         category: 'necklaces',
         material: 'Elastic',
-        price: 112,
-        image: 'imgs/petal-drop-necklace.png',
-        description: 'Cascading gold petals in a waterfall design',
+        price: 400,
+        image: 'imgs/blue-white-necklace.jpeg',
+        description: 'Elegant blue and white beads perfect for daily wear',
         rating: 5,
         reviews: 19,
         badge: 'Bestseller'
     },
     {
         id: 6,
-        title: 'Midnight Stars Bracelet',
-        category: 'bracelets',
-        material: 'Stones',
-        price: 72,
-        image: 'imgs/midnight-stars-bracelet.png',
-        description: 'Delicate chain with sparkling star charms',
+        title: 'BOHO theme painting',
+        category: 'paintings',
+        material: 'Canvas',
+        price: 700,
+        image: 'imgs/boho-theme-painting.jpeg',
+        description: 'Delicate canvas painting with boho-inspired design',
         rating: 4.6,
         reviews: 41,
         badge: null
     },
     {
         id: 7,
-        title: 'Rose Garden Ring Set',
-        category: 'rings',
-        material: 'Wired',
-        price: 135,
-        image: 'imgs/rose-garden-ring-set.png',
-        description: 'Set of 3 delicate rose-inspired rings',
+        title: 'Abstract theme paintings',
+        category: 'paintings',
+        material: 'Canvas',
+        price: 700,
+        image: 'imgs/abstract-paintings.jpeg',
+        description: ' canvas paintings with abstract designs, perfect for adding a pop of color to any space',
         rating: 4.8,
         reviews: 25,
         badge: null
     },
     {
         id: 8,
-        title: 'Luna Earring Collection',
+        title: 'Flower Earring',
         category: 'earrings',
-        material: 'Beads',
+        material: 'wired',
         price: 48,
-        image: 'imgs/luna-earring-collection.png',
-        description: 'Lightweight moon phase earrings',
+        image: 'imgs/flower-earring.jpeg',
+        description: 'Lightweight flower dangling earrings',
         rating: 4.7,
         reviews: 63,
         badge: null
     },
     {
         id: 9,
-        title: 'Golden Bliss Necklace',
-        category: 'necklaces',
-        material: 'Stones',
-        price: 165,
-        image: 'imgs/golden-bliss-necklace.png',
-        description: 'Luxurious chain with heart locket',
+        title: 'matching bracelets with magnetic heart',
+        category: 'matching-bracelets',
+        material: 'wired',
+        price: 500,
+        image: 'imgs/matching-bracelets-magnetic-heart.jpeg',
+        description: 'Elegant matching bracelets with magnetic heart charm, perfect for couples',
         rating: 4.9,
         reviews: 88,
         badge: 'Bestseller'
     },
     {
         id: 10,
-        title: 'Cosmic Vibes Set',
-        category: 'sets',
+        title: 'Cosmic Vibes bracelet',
+        category: 'bracelets',
         material: 'Wired',
-        price: 145,
-        image: 'imgs/cosmic-vibes-set.png',
-        description: 'Complete set: necklace, bracelet, earrings',
+        price: 300,
+        image: 'imgs/cosmic-vibes-bracelet.jpeg',
+        description: 'Elegant wired bracelet with cosmic charms',
         rating: 4.8,
         reviews: 34,
         badge: 'New'
     },
     {
         id: 11,
-        title: '',
-        category: 'rings',
-        material: 'Elastic',
-        price: 92,
-        image: 'imgs/enchanted-forest-ring.png',
-        description: 'Nature-inspired with leaf details',
+        title: 'purple and white Bracelet',
+        category: 'matching-bracelets',
+        material: 'Beads',
+        price: 400,
+        image: 'imgs/purple-white-bracelet.jpeg',
+        description: 'Elegant purple and white beads perfect for daily wear',
         rating: 4.6,
         reviews: 22,
         badge: null
@@ -363,10 +352,10 @@ const productDatabase = [
     {
         id: 12,
         title: 'Black and Brown Bracelet',
-        category: 'bracelets',
-        material: 'beads',
+        category: 'matching-bracelets',
+        material: 'Beads',
         price: 400,
-        image: 'imgs/black-brown-bracelet.png',
+        image: 'imgs/black-brown-bracelet.jpeg',
         description: 'Warm black and brown beads perfect for daily wear',
         rating: 4.9,
         reviews: 56,
@@ -471,7 +460,7 @@ function renderProducts(products) {
                 <h3 class="product-title">${product.title}</h3>
                 <p class="product-description">${product.description}</p>
                 <div class="product-footer">
-                    <span class="product-price">$${product.price}</span>
+                    <span class="product-price">Rs ${product.price}</span>
                     <span class="product-rating">⭐ ${product.rating} (${product.reviews})</span>
                 </div>
                 <div class="product-actions">
@@ -488,20 +477,74 @@ function renderProducts(products) {
  */
 function quickView(productId) {
     const product = productDatabase.find(p => p.id === productId);
-    alert(`Quick View: ${product.title}\n\nPrice: $${product.price}\nMaterial: ${product.material}`);
+    alert(`Quick View: ${product.title}\n\nPrice: Rs ${product.price}\nMaterial: ${product.material}`);
 }
 
 /**
- * Add to Cart functionality (placeholder)
+ * Add to Cart functionality with cart storage
  */
-function addToCart(productId) {
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function addToCart(productId, quantity = 1) {
     const product = productDatabase.find(p => p.id === productId);
-    const cartCount = document.querySelector('.cart-count');
-    let count = parseInt(cartCount.textContent) || 0;
-    count++;
-    cartCount.textContent = count;
-    alert(`${product.title} added to cart!`);
+    if (!product) return;
+    
+    // Check if product already in cart
+    const existingItem = cart.find(item => item.id === productId);
+    
+    if (existingItem) {
+        existingItem.quantity += quantity;
+    } else {
+        cart.push({
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            image: product.image,
+            material: product.material,
+            quantity: quantity
+        });
+    }
+    
+    // Save cart to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    // Update cart count
+    updateCartCount();
+    
+    // Show success message
+    showCartNotification(`${product.title} added to cart!`);
 }
+
+function updateCartCount() {
+    const cartCount = document.querySelector('.cart-count');
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCount.textContent = totalItems;
+}
+
+function showCartNotification(message) {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        background: #4CAF50;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 4px;
+        z-index: 1000;
+        font-weight: bold;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    `;
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    
+    // Remove after 2 seconds
+    setTimeout(() => notification.remove(), 2000);
+}
+
+// Initialize cart count on page load
+window.addEventListener('load', updateCartCount);
 
 // ============================================================================
 // 9. FILTER LOGIC
@@ -613,6 +656,112 @@ if (clearFiltersBtn) {
         filterProducts();
     });
 }
+
+// ============================================================================
+// 10. CART MODAL FUNCTIONALITY
+// ============================================================================
+
+const cartModal = document.getElementById('cartModal');
+const cartModalOverlay = document.getElementById('cartModalOverlay');
+const cartSection = document.querySelector('.cart-section');
+
+/**
+ * Display cart modal with items and total
+ */
+function displayCart() {
+    const cartItemsContainer = document.getElementById('cartItemsContainer');
+    const totalPrice = document.querySelector('.total-price');
+    
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = `
+            <div class="empty-cart">
+                <p>Your cart is empty</p>
+            </div>
+        `;
+        totalPrice.textContent = 'Rs 0';
+        return;
+    }
+    
+    let total = 0;
+    cartItemsContainer.innerHTML = cart.map(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        
+        return `
+            <div class="cart-item">
+                <div class="cart-item-image">
+                    <img src="${item.image}" alt="${item.title}">
+                </div>
+                <div class="cart-item-details">
+                    <h4>${item.title}</h4>
+                    <p class="cart-item-material">${item.material}</p>
+                    <p class="cart-item-price">Rs ${item.price}</p>
+                </div>
+                <div class="cart-item-quantity">
+                    <button class="qty-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                    <input type="number" value="${item.quantity}" readonly class="qty-input">
+                    <button class="qty-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                </div>
+                <div class="cart-item-total">
+                    <p>Rs ${itemTotal}</p>
+                </div>
+                <button class="remove-btn" onclick="removeFromCart(${item.id})">🗑️</button>
+            </div>
+        `;
+    }).join('');
+    
+    totalPrice.textContent = `Rs ${total}`;
+}
+
+/**
+ * Open cart modal
+ */
+function openCart() {
+    displayCart();
+    cartModal.style.display = 'block';
+    cartModalOverlay.style.display = 'block';
+}
+
+/**
+ * Close cart modal
+ */
+function closeCart() {
+    cartModal.style.display = 'none';
+    cartModalOverlay.style.display = 'none';
+}
+
+/**
+ * Remove item from cart
+ */
+function removeFromCart(productId) {
+    cart = cart.filter(item => item.id !== productId);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    displayCart();
+}
+
+/**
+ * Update quantity of item in cart
+ */
+function updateQuantity(productId, change) {
+    const item = cart.find(item => item.id === productId);
+    if (item) {
+        item.quantity += change;
+        if (item.quantity <= 0) {
+            removeFromCart(productId);
+        } else {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            displayCart();
+        }
+    }
+}
+
+// Add click listener to cart section
+cartSection.addEventListener('click', (e) => {
+    e.preventDefault();
+    openCart();
+});
 
 
 
