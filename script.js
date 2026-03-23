@@ -264,7 +264,18 @@ const productDatabase = [
         reviews: 28,
         badge: 'Bestseller'
     },
-    
+    {
+        id: 4,
+        title: 'daily wear rings',
+        category: 'rings',
+        material: 'elastic',
+        price: 200,
+        image: 'imgs/small-beaded-ring.jpeg',
+        description: 'Lightweight and versatile rings perfect for daily wear',
+        rating: 4.8,
+        reviews: 32,
+        badge: 'Bestseller'
+    },
     {
         id: 5,
         title: 'blue and white Necklace',
@@ -306,7 +317,7 @@ const productDatabase = [
         title: 'Flower Earring',
         category: 'earrings',
         material: 'wired',
-        price: 48,
+        price: 200,
         image: 'imgs/flower-earring.jpeg',
         description: 'Lightweight flower dangling earrings',
         rating: 4.7,
@@ -852,6 +863,47 @@ searchInput.addEventListener('input', (e) => {
             }
         }
     }
+});
+
+// ============================================================================
+// 12. FOOTER SHOP LINKS FUNCTIONALITY
+// ============================================================================
+
+/**
+ * Handle footer shop category links
+ */
+const footerShopLinks = document.querySelectorAll('.footer-shop-link');
+footerShopLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const filter = link.getAttribute('data-filter');
+        
+        // Show all products section
+        showAllProducts();
+        
+        // If filter is "all", show all products
+        if (filter === 'all') {
+            renderProducts(productDatabase);
+            const resultsInfo = document.querySelector('.results-info');
+            if (resultsInfo) {
+                resultsInfo.innerHTML = `
+                    <h2>All Jewelry</h2>
+                    <p class="results-count"><span id="product-count">${productDatabase.length}</span> pieces found</p>
+                `;
+            }
+        } else {
+            // Filter products by category
+            const filtered = productDatabase.filter(p => p.category === filter);
+            renderProducts(filtered);
+            const resultsInfo = document.querySelector('.results-info');
+            if (resultsInfo) {
+                resultsInfo.innerHTML = `
+                    <h2>${filter.charAt(0).toUpperCase() + filter.slice(1)}</h2>
+                    <p class="results-count"><span id="product-count">${filtered.length}</span> pieces found</p>
+                `;
+            }
+        }
+    });
 });
 
 

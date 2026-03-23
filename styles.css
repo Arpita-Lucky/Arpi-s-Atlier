@@ -223,65 +223,106 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2px;
+    gap: 4px;
     position: relative;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cart-section:hover .cart-icon {
+    transform: scale(1.15);
+    color: #6b0787;
 }
 
 .cart-icon {
-    font-size: 24px;
+    font-size: 22px;
+    color: #333;
+    transition: all 0.3s ease;
 }
 
 .cart-count {
     position: absolute;
-    top: -8px;
-    right: -8px;
-    background: #6b0787;
+    top: -10px;
+    right: -10px;
+    background: linear-gradient(135deg, #6b0787, #8b3aa3);
     color: white;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
+    box-shadow: 0 2px 6px rgba(107, 7, 135, 0.3);
+    animation: pulse 2s infinite;
+    background: linear-gradient(135deg, #6b0787, #8b3aa3) !important;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
 .cart-label {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     color: #333;
+    letter-spacing: 0.3px;
 }
 
 /* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    padding: 15px 40px;
-    border-top: 1px solid #f0f0f0;
+    gap: 40px;
+    padding: 0 40px;
+    border-top: 1px solid #f5f5f5;
     max-width: 1400px;
     margin: 0 auto;
-    background: white;
+    background: #fbecff;
+    height: 60px;
+    align-items: center;
 }
 
 .nav-item {
     text-decoration: none;
-    color: #333;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 5px 0;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s;
+    color: #555;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 0;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
 }
 
-.nav-item:hover,
+.nav-item:hover {
+    color: #6b0787;
+}
+
 .nav-item.active {
     color: #6b0787;
     border-bottom-color: #6b0787;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6b0787, #8b3aa3);
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+    width: 100%;
 }
 
 /* Hero Section */
@@ -2059,7 +2100,7 @@ body {
 
 .cart-item-price {
     font-weight: bold;
-    color: #d4169f;
+    color: #6b0787;
     font-size: 14px;
     margin: 5px 0 0 0;
 }
@@ -2075,7 +2116,7 @@ body {
 }
 
 .qty-btn {
-    background: #d4169f;
+    background: #6b0787;
     color: white;
     border: none;
     width: 24px;
@@ -2090,7 +2131,7 @@ body {
 }
 
 .qty-btn:hover {
-    background: #c1118d;
+    background: #5a0670;
 }
 
 .qty-input {
@@ -2143,13 +2184,13 @@ body {
 }
 
 .total-price {
-    color: #d4169f;
+    color: #6b0787;
 }
 
 .checkout-btn {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, #d4169f, #e835c5);
+    background: linear-gradient(135deg, #6b0787, #8b3aa3);
     color: white;
     border: none;
     border-radius: 6px;
@@ -2161,7 +2202,7 @@ body {
 
 .checkout-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(212, 22, 159, 0.3);
+    box-shadow: 0 8px 16px rgba(107, 7, 135, 0.3);
 }
 
 /* Responsive Design for Cart Modal */
@@ -2188,7 +2229,7 @@ body {
 
 .studio-tagline {
     font-size: 14px;
-    color: #d4169f;
+    color: #6b0787;
     font-weight: 600;
     letter-spacing: 1px;
     margin-bottom: 10px;
@@ -2230,9 +2271,9 @@ body {
 }
 
 .step.active {
-    background: linear-gradient(135deg, #d4169f, #e835c5);
+    background: linear-gradient(135deg, #6b0787, #8b3aa3);
     color: white;
-    box-shadow: 0 4px 12px rgba(212, 22, 159, 0.3);
+    box-shadow: 0 4px 12px rgba(107, 7, 135, 0.3);
 }
 
 .step-line {
@@ -2243,7 +2284,7 @@ body {
 }
 
 .step-line.active {
-    background: linear-gradient(135deg, #d4169f, #e835c5);
+    background: linear-gradient(135deg, #6b0787, #8b3aa3);
 }
 
 /* Selection Container */
@@ -2277,14 +2318,14 @@ body {
 }
 
 .type-card:hover {
-    border-color: #d4169f;
-    box-shadow: 0 4px 12px rgba(212, 22, 159, 0.1);
+    border-color: #6b0787;
+    box-shadow: 0 4px 12px rgba(107, 7, 135, 0.1);
 }
 
 .type-card.active {
-    border: 3px solid #d4169f;
+    border: 3px solid #6b0787;
     background: #faf8fc;
-    box-shadow: 0 8px 20px rgba(212, 22, 159, 0.2);
+    box-shadow: 0 8px 20px rgba(107, 7, 135, 0.2);
 }
 
 .type-icon {
@@ -2332,12 +2373,12 @@ body {
 }
 
 .material-card:hover {
-    border-color: #d4169f;
-    box-shadow: 0 4px 12px rgba(212, 22, 159, 0.1);
+    border-color: #6b0787;
+    box-shadow: 0 4px 12px rgba(107, 7, 135, 0.1);
 }
 
 .material-card.active {
-    border: 3px solid #d4169f;
+    border: 3px solid #6b0787;
     background: #faf8fc;
 }
 
@@ -2355,7 +2396,7 @@ body {
 }
 
 .material-card.active .material-name {
-    color: #d4169f;
+    color: #6b0787;
 }
 
 /* Gemstone Selection */
@@ -2380,12 +2421,12 @@ body {
 }
 
 .gemstone-card:hover {
-    border-color: #d4169f;
-    box-shadow: 0 4px 12px rgba(212, 22, 159, 0.1);
+    border-color: #6b0787;
+    box-shadow: 0 4px 12px rgba(107, 7, 135, 0.1);
 }
 
 .gemstone-card.active {
-    border: 3px solid #d4169f;
+    border: 3px solid #6b0787;
     background: #faf8fc;
 }
 
@@ -2428,7 +2469,7 @@ body {
 }
 
 .gemstone-card.active .gemstone-name {
-    color: #d4169f;
+    color: #6b0787;
 }
 
 /* Engraving Section */
@@ -2450,8 +2491,8 @@ body {
 
 .engraving-input:focus {
     outline: none;
-    border-color: #d4169f;
-    box-shadow: 0 0 0 3px rgba(212, 22, 159, 0.1);
+    border-color: #6b0787;
+    box-shadow: 0 0 0 3px rgba(107, 7, 135, 0.1);
 }
 
 .character-count {
@@ -2468,7 +2509,7 @@ body {
 }
 
 .summary-card {
-    background: linear-gradient(135deg, #f0d4e8, #e8d0f5);
+    background: linear-gradient(135deg, #f0d4e8, #f6e0fe);
     border-radius: 12px;
     padding: 30px;
     display: flex;
@@ -2500,7 +2541,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-top: 20px;
-    border-top: 2px solid rgba(212, 22, 159, 0.2);
+    border-top: 2px solid rgba(107, 7, 135, 0.2);
 }
 
 .summary-price {
@@ -2522,7 +2563,7 @@ body {
 
 .add-custom-btn {
     padding: 12px 30px;
-    background: linear-gradient(135deg, #d4169f, #e835c5);
+    background: linear-gradient(135deg, #6b0787, #8b3aa3);
     color: white;
     border: none;
     border-radius: 8px;
@@ -2535,7 +2576,7 @@ body {
 
 .add-custom-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(212, 22, 159, 0.3);
+    box-shadow: 0 8px 20px rgba(107, 7, 135, 0.3);
 }
 
 .add-custom-btn:active {
