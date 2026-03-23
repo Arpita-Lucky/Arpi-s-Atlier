@@ -2370,6 +2370,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     background: white;
+    position: relative;
 }
 
 .material-card:hover {
@@ -2380,6 +2381,23 @@ body {
 .material-card.active {
     border: 3px solid #6b0787;
     background: #faf8fc;
+}
+
+.material-card.active::after {
+    content: '✓';
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    background-color: #6b0787;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .material-name {
@@ -2439,20 +2457,29 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.gemstone-color.amethyst {
-    background: #9370DB;
+.gemstone-color.basic-red {
+    background: #FF0000;
 }
 
-.gemstone-color.moonstone {
-    background: #B0E0E6;
+.gemstone-color.basic-blue {
+    background: #0066FF;
 }
 
-.gemstone-color.rose-quartz {
-    background: #FFB6C1;
+.gemstone-color.basic-green {
+    background: #00CC00;
 }
 
-.gemstone-color.peridot {
-    background: #ADFF2F;
+.gemstone-color.basic-yellow {
+    background: #FFD700;
+}
+
+.gemstone-color.basic-black {
+    background: #000000;
+}
+
+.gemstone-color.basic-white {
+    background: #FFFFFF;
+    border: 2px solid #cccccc;
 }
 
 .gemstone-name {
@@ -2470,6 +2497,132 @@ body {
 
 .gemstone-card.active .gemstone-name {
     color: #6b0787;
+}
+
+/* Quantity Section */
+.quantity-section {
+    animation: slideDown 0.3s ease-in-out;
+    margin: 40px 0;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 250px;
+}
+
+.qty-btn {
+    background-color: #6b0787;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.qty-btn:hover {
+    background-color: #5a0472;
+    transform: scale(1.05);
+}
+
+.qty-btn:active {
+    transform: scale(0.95);
+}
+
+.qty-next-btn {
+    background-color: #6b0787;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+}
+
+.qty-next-btn:hover {
+    background-color: #5a0472;
+    transform: translateX(3px);
+}
+
+.qty-next-btn:active {
+    transform: translateX(1px) scale(0.98);
+}
+
+.quantity-input {
+    width: 70px;
+    padding: 10px;
+    border: 2px solid #e8e8e8;
+    border-radius: 6px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    transition: border-color 0.3s ease;
+}
+
+.quantity-input:focus {
+    outline: none;
+    border-color: #6b0787;
+    box-shadow: 0 0 0 3px rgba(107, 7, 135, 0.1);
+}
+
+/* Details Section */
+.details-section {
+    animation: slideDown 0.3s ease-in-out;
+    margin: 40px 0;
+}
+
+.details-input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e8e8e8;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.details-input:focus {
+    outline: none;
+    border-color: #6b0787;
+    box-shadow: 0 0 0 3px rgba(107, 7, 135, 0.1);
+}
+
+.details-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.details-next-btn {
+    background-color: #6b0787;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.details-next-btn:hover {
+    background-color: #5a0472;
+    transform: translateX(3px);
+}
+
+.details-next-btn:active {
+    transform: translateX(1px) scale(0.98);
 }
 
 /* Engraving Section */

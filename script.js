@@ -26,31 +26,60 @@ hamburger.addEventListener('click', function() {
  */
 const navItems = document.querySelectorAll('.nav-item');
 navItems.forEach(item => {
-    item.addEventListener('click', function() {
-        navbar.classList.remove('active');
-        hamburger.classList.remove('active');
-    });
+    item.addEventListener('click', function(e) {
+        // Close mobile navbar
+        navbar.classList.remove('active');
+        hamburger.classList.remove('active');
+        
+        // Update active state
+        navItems.forEach(navItem => navItem.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Handle smooth scroll for anchor links
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    });
 });
 
-// ============================================================================
-// 2. HERO BACKGROUND SLIDER
-// ============================================================================
-
-const hero = document.getElementById('hero');
-const heroImages = [
-    'imgs/landingPage.jpeg',
-    'imgs/hero2.jpg',
-    'imgs/hero3.jpeg'
-];
-let heroImageIndex = 0;
+/**
+ * Close navbar when clicking outside of it
+ */
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.hamburger-menu') && !e.target.closest('.navbar')) {
+        navbar.classList.remove('active');
+        hamburger.classList.remove('active');
+    }
+});
 
 /**
- * Rotate hero background images every 5 seconds
- */
-setInterval(() => {
-    heroImageIndex = (heroImageIndex + 1) % heroImages.length;
-    hero.style.backgroundImage = `url('${heroImages[heroImageIndex]}')`;
-}, 5000);
+ * Update active nav item based on scroll position
+ */
+window.addEventListener('scroll', function() {
+    let current = '';
+    const sections = document.querySelectorAll('section[id], header[id]');
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navItems.forEach(item => {
+        item.classList.remove('active');
+        const href = item.getAttribute('href');
+        if (href === '#' + current || (href === '#hero' && current === '')) {
+            item.classList.add('active');
+        }
+    });
+});
 
 // ============================================================================
 // 3. HEADER SCROLL EFFECT

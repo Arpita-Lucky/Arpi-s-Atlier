@@ -90,7 +90,7 @@
 
 <section class="design-studio">
     <div class="studio-header">
-        <p class="studio-tagline">✨ CUSTOM DESIGN STUDIO</p>
+        <p class="studio-tagline"> CUSTOM DESIGN STUDIO</p>
         <h1 class="studio-title">Create Your Dream Piece</h1>
         <p class="studio-subtitle">Design something uniquely yours, made by our artisans</p>
     </div>
@@ -137,27 +137,7 @@
         <div class="material-selection" id="material-selection" style="display: none;">
             <h2 class="selection-title">2. Select Material</h2>
             <div class="material-grid">
-                <div class="material-card">
-                    <p class="material-name">elastic</p>
-                    <p class="material-price">Included</p>
-                </div>
-                <div class="material-card">
-                    <p class="material-name">wire</p>
-                    <p class="material-price">Included</p>
-                </div>
-                <div class="material-card">
-                    <p class="material-name">crack beads</p>
-                    <p class="material-price">+$35</p>
-                </div>
-                <div class="material-card">
-                    <p class="material-name">glass beads</p>
-                    <p class="material-price">+$5</p>
-                </div>
-                <div class="material-card">
-                    <p class="material-name">charm</p>
-                    <p class="material-price">+$5</p>
-                </div>
-                
+                <!-- Materials will be dynamically generated based on jewelry type -->
             </div>
         </div>
 
@@ -165,35 +145,49 @@
             <h2 class="selection-title">3. choose your color</h2>
             <div class="gemstone-grid">
                 <div class="gemstone-card active">
-                    <p class="gemstone-name">No gemstone</p>
+                    <span class="gemstone-color basic-red"></span>
+                    <p class="gemstone-name">Red</p>
                 </div>
                 <div class="gemstone-card">
-                    <span class="gemstone-color amethyst"></span>
-                    <p class="gemstone-name">Amethyst</p>
-                    <p class="gemstone-price">+$25</p>
+                    <span class="gemstone-color basic-blue"></span>
+                    <p class="gemstone-name">Blue</p>
                 </div>
                 <div class="gemstone-card">
-                    <span class="gemstone-color moonstone"></span>
-                    <p class="gemstone-name">Moonstone</p>
-                    <p class="gemstone-price">+$30</p>
+                    <span class="gemstone-color basic-green"></span>
+                    <p class="gemstone-name">Green</p>
                 </div>
                 <div class="gemstone-card">
-                    <span class="gemstone-color rose-quartz"></span>
-                    <p class="gemstone-name">Rose Quartz</p>
-                    <p class="gemstone-price">+$20</p>
+                    <span class="gemstone-color basic-yellow"></span>
+                    <p class="gemstone-name">Yellow</p>
                 </div>
                 <div class="gemstone-card">
-                    <span class="gemstone-color peridot"></span>
-                    <p class="gemstone-name">Peridot</p>
-                    <p class="gemstone-price">+$28</p>
+                    <span class="gemstone-color basic-black"></span>
+                    <p class="gemstone-name">Black</p>
+                </div>
+                <div class="gemstone-card">
+                    <span class="gemstone-color basic-white"></span>
+                    <p class="gemstone-name">White</p>
                 </div>
             </div>
         </div>
 
-        <div class="engraving-section" id="engraving-section" style="display: none;">
-            <h2 class="selection-title">Engraving (optional)</h2>
-            <input type="text" id="engraving-input" class="engraving-input" placeholder="Up to 20 characters" maxlength="20">
-            <p class="character-count"><span id="char-count">0</span>/20 characters</p>
+        <div class="quantity-section" id="quantity-section" style="display: none;">
+            <h2 class="selection-title">4. Select Quantity</h2>
+            <div class="quantity-selector">
+                <button class="qty-btn" id="qty-decrease">−</button>
+                <input type="number" id="quantity-input" class="quantity-input" value="1" min="1">
+                <button class="qty-btn" id="qty-increase">+</button>
+                <button class="qty-next-btn" id="qty-next-btn">Next →</button>
+            </div>
+        </div>
+
+        <div class="details-section" id="details-section" style="display: none;">
+            <h2 class="selection-title">Optional Details or Instructions</h2>
+            <textarea id="details-input" class="details-input" placeholder="Add any special requests or design details..." maxlength="500" rows="4"></textarea>
+            <div class="details-footer">
+                <p class="character-count"><span id="details-count">0</span>/500 characters</p>
+                <button class="details-next-btn" id="details-next-btn">Next →</button>
+            </div>
         </div>
 
         <div class="custom-design-summary" id="custom-design-summary" style="display: none;">
@@ -202,18 +196,19 @@
                 <div class="summary-details">
                     <p><span class="summary-label">Type:</span> <span id="summary-type">-</span></p>
                     <p><span class="summary-label">Material:</span> <span id="summary-material">-</span></p>
-                    <p><span class="summary-label">Gemstone:</span> <span id="summary-gemstone">-</span></p>
-                    <p><span class="summary-label">Engraving:</span> <span id="summary-engraving">-</span></p>
+                    <p><span class="summary-label">Color:</span> <span id="summary-gemstone">-</span></p>
+                    <p><span class="summary-label">Quantity:</span> <span id="summary-quantity">-</span></p>
+                    <p><span class="summary-label">Details:</span> <span id="summary-details">-</span></p>
                 </div>
                 <div class="summary-footer">
                     <div class="summary-price">
-                        <span class="base-price">Base: Rs 100</span>
                         <span class="total-price" id="summary-total">Rs 100</span>
                     </div>
                     <button class="add-custom-btn" onclick="addCustomToCart()">Add to Cart ✨</button>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 
@@ -294,28 +289,124 @@
             type: null,
             material: null,
             gemstone: null,
-            engraving: '',
+            quantity: 1,
+            details: '',
             materialPrice: 0,
             gemstonePrice: 0
         };
 
         const basePrice = 100;
 
+        // Material options for different jewelry types
+        const materialsByType = {
+            'Ring': [
+                { name: 'Silver', price: 'Included' },
+                { name: 'Gold Plated', price: '+Rs 1500' },
+                { name: 'Stainless Steel', price: '+Rs 600' }
+            ],
+            'Necklace': [
+                { name: 'Silver Chain', price: 'Included' },
+                { name: 'Gold Chain', price: '+Rs 2100' },
+                { name: 'Leather Cord', price: '+Rs 900' }
+            ],
+            'Earrings': [
+                { name: 'Sterling Silver', price: 'Included' },
+                { name: 'Gold Plated', price: '+Rs 1200' },
+                { name: 'Titanium', price: '+Rs 1080' }
+            ],
+            'Bracelet': [
+                { name: 'elastic', price: 'Included' },
+                { name: 'wire', price: 'Included' },
+                { name: 'crack beads', price: '+Rs 2100' },
+                { name: 'glass beads', price: '+Rs 300' },
+                { name: 'charm', price: '+Rs 300' }
+            ],
+            'phone charm': [
+                { name: 'elastic', price: 'Included' },
+                { name: 'acrylic', price: '+Rs 480' },
+                { name: 'resin', price: '+Rs 720' }
+            ],
+            'keychain': [
+                { name: 'steel ring', price: 'Included' },
+                { name: 'leather', price: '+Rs 600' },
+                { name: 'wood', price: '+Rs 480' }
+            ]
+        };
+
         document.addEventListener('DOMContentLoaded', () => {
             const typeCards = document.querySelectorAll('.type-card');
-            const materialCards = document.querySelectorAll('.material-card');
-            const gemstoneCards = document.querySelectorAll('.gemstone-card');
-            const engravingInput = document.getElementById('engraving-input');
-            const charCount = document.getElementById('char-count');
-            
             const materialSelection = document.getElementById('material-selection');
+            const materialGrid = document.querySelector('.material-grid');
             const gemstoneSelection = document.getElementById('gemstone-selection');
             const engravingSection = document.getElementById('engraving-section');
             const customDesignSummary = document.getElementById('custom-design-summary');
+            const engravingInput = document.getElementById('engraving-input');
+            const charCount = document.getElementById('char-count');
             
             const typeGrid = document.querySelector('.type-grid');
             const steps = document.querySelectorAll('.step');
             const stepLines = document.querySelectorAll('.step-line');
+
+            // Function to render material cards based on jewelry type
+            function renderMaterials(jewelryType) {
+                const materials = materialsByType[jewelryType] || [];
+                materialGrid.innerHTML = '';
+                
+                materials.forEach(material => {
+                    const materialCard = document.createElement('div');
+                    materialCard.className = 'material-card';
+                    materialCard.innerHTML = `
+                        <p class="material-name">${material.name}</p>
+                        <p class="material-price">${material.price}</p>
+                    `;
+                    
+                    // Add click handler for material selection
+                    materialCard.addEventListener('click', () => {
+                        materialCard.classList.toggle('active');
+                        
+                        // Collect all selected materials
+                        const selectedMaterials = [];
+                        let totalMaterialPrice = 0;
+                        
+                        document.querySelectorAll('.material-card').forEach(card => {
+                            if (card.classList.contains('active')) {
+                                const materialName = card.querySelector('.material-name').textContent;
+                                selectedMaterials.push(materialName);
+                                const priceText = card.querySelector('.material-price').textContent;
+                                const price = priceText.includes('Included') ? 0 : parseInt(priceText.replace(/\$|Rs /g, ''));
+                                totalMaterialPrice += price;
+                            }
+                        });
+                        
+                        // Update design object
+                        customDesign.material = selectedMaterials.length > 0 ? selectedMaterials.join(', ') : '';
+                        customDesign.materialPrice = totalMaterialPrice;
+                        
+                        // Show next sections if materials are selected
+                        if (selectedMaterials.length > 0) {
+                            gemstoneSelection.style.display = 'block';
+                            engravingSection.style.display = 'none';
+                            customDesignSummary.style.display = 'none';
+                            
+                            steps[1].classList.add('active');
+                            steps[2].classList.add('active');
+                            stepLines[1].classList.add('active');
+
+                            setTimeout(() => {
+                                gemstoneSelection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }, 100);
+                        } else {
+                            gemstoneSelection.style.display = 'none';
+                            engravingSection.style.display = 'none';
+                            customDesignSummary.style.display = 'none';
+                        }
+
+                        updateSummary();
+                    });
+                    
+                    materialGrid.appendChild(materialCard);
+                });
+            }
 
             // Handle type card selection
             typeCards.forEach((card, index) => {
@@ -323,7 +414,13 @@
                     typeCards.forEach(c => c.classList.remove('active'));
                     card.classList.add('active');
                     
-                    customDesign.type = card.querySelector('.type-name').textContent;
+                    const jewelryType = card.querySelector('.type-name').textContent;
+                    customDesign.type = jewelryType;
+                    customDesign.material = null;
+                    customDesign.materialPrice = 0;
+                    
+                    // Render materials for selected jewelry type
+                    renderMaterials(jewelryType);
                     
                     materialSelection.style.display = 'block';
                     gemstoneSelection.style.display = 'none';
@@ -342,33 +439,8 @@
                 });
             });
 
-            // Handle material card selection
-            materialCards.forEach((card) => {
-                card.addEventListener('click', () => {
-                    materialCards.forEach(c => c.classList.remove('active'));
-                    card.classList.add('active');
-                    
-                    customDesign.material = card.querySelector('.material-name').textContent;
-                    const priceText = card.querySelector('.material-price').textContent;
-                    customDesign.materialPrice = priceText.includes('Included') ? 0 : parseInt(priceText.replace(/\$|Rs /g, ''));
-                    
-                    gemstoneSelection.style.display = 'block';
-                    engravingSection.style.display = 'none';
-                    customDesignSummary.style.display = 'none';
-                    
-                    steps[1].classList.add('active');
-                    steps[2].classList.add('active');
-                    stepLines[1].classList.add('active');
-
-                    setTimeout(() => {
-                        gemstoneSelection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 100);
-
-                    updateSummary();
-                });
-            });
-
             // Handle gemstone card selection
+            const gemstoneCards = document.querySelectorAll('.gemstone-card');
             gemstoneCards.forEach((card) => {
                 card.addEventListener('click', () => {
                     gemstoneCards.forEach(c => c.classList.remove('active'));
@@ -378,25 +450,80 @@
                     const priceText = card.querySelector('.gemstone-price')?.textContent;
                     customDesign.gemstonePrice = priceText ? parseInt(priceText.replace(/\$|Rs /g, '')) : 0;
                     
-                    engravingSection.style.display = 'block';
-                    customDesignSummary.style.display = 'block';
+                    document.getElementById('quantity-section').style.display = 'block';
+                    document.getElementById('details-section').style.display = 'none';
+                    customDesignSummary.style.display = 'none';
                     
                     steps[2].classList.add('active');
                     stepLines[1].classList.add('active');
 
                     setTimeout(() => {
-                        engravingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        document.getElementById('quantity-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }, 100);
 
                     updateSummary();
                 });
             });
 
-            // Handle engraving input
-            engravingInput.addEventListener('input', (e) => {
-                customDesign.engraving = e.target.value;
-                charCount.textContent = e.target.value.length;
+            // Handle quantity controls
+            const quantityInput = document.getElementById('quantity-input');
+            const qtyDecrease = document.getElementById('qty-decrease');
+            const qtyIncrease = document.getElementById('qty-increase');
+            
+            customDesign.quantity = 1;
+            
+            qtyDecrease.addEventListener('click', () => {
+                if (customDesign.quantity > 1) {
+                    customDesign.quantity--;
+                    quantityInput.value = customDesign.quantity;
+                    updateSummary();
+                }
+            });
+            
+            qtyIncrease.addEventListener('click', () => {
+                customDesign.quantity++;
+                quantityInput.value = customDesign.quantity;
                 updateSummary();
+            });
+            
+            quantityInput.addEventListener('change', (e) => {
+                const val = parseInt(e.target.value) || 1;
+                customDesign.quantity = val > 0 ? val : 1;
+                quantityInput.value = customDesign.quantity;
+                updateSummary();
+            });
+
+            // Handle Next button in quantity section
+            const qtyNextBtn = document.getElementById('qty-next-btn');
+            qtyNextBtn.addEventListener('click', () => {
+                document.getElementById('details-section').style.display = 'block';
+                customDesignSummary.style.display = 'none';
+                
+                setTimeout(() => {
+                    document.getElementById('details-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            });
+
+            // Handle details input
+            const detailsInput = document.getElementById('details-input');
+            const detailsCount = document.getElementById('details-count');
+            const detailsNextBtn = document.getElementById('details-next-btn');
+            
+            customDesign.details = '';
+            
+            detailsInput.addEventListener('input', (e) => {
+                customDesign.details = e.target.value;
+                detailsCount.textContent = e.target.value.length;
+                updateSummary();
+            });
+
+            // Handle Next button in details section
+            detailsNextBtn.addEventListener('click', () => {
+                customDesignSummary.style.display = 'block';
+                
+                setTimeout(() => {
+                    customDesignSummary.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
             });
 
             // Update summary display
@@ -404,9 +531,11 @@
                 document.getElementById('summary-type').textContent = customDesign.type || '-';
                 document.getElementById('summary-material').textContent = customDesign.material || '-';
                 document.getElementById('summary-gemstone').textContent = customDesign.gemstone || '-';
-                document.getElementById('summary-engraving').textContent = customDesign.engraving || 'None';
+                document.getElementById('summary-quantity').textContent = customDesign.quantity || '1';
+                document.getElementById('summary-details').textContent = customDesign.details || 'None';
                 
-                const totalPrice = basePrice + customDesign.materialPrice + customDesign.gemstonePrice;
+                const pricePerItem = basePrice + customDesign.materialPrice + customDesign.gemstonePrice;
+                const totalPrice = pricePerItem * (customDesign.quantity || 1);
                 document.getElementById('summary-total').textContent = `Rs ${totalPrice}`;
             }
         });
@@ -423,11 +552,12 @@
                 return;
             }
             if (!customDesign.gemstone) {
-                showCartNotification('Please select a gemstone option');
+                showCartNotification('Please select a color');
                 return;
             }
 
-            const totalPrice = basePrice + customDesign.materialPrice + customDesign.gemstonePrice;
+            const pricePerItem = basePrice + customDesign.materialPrice + customDesign.gemstonePrice;
+            const totalPrice = pricePerItem * (customDesign.quantity || 1);
             
             const customProduct = {
                 id: Date.now(),
@@ -474,11 +604,6 @@
             document.body.appendChild(notification);
             
             setTimeout(() => notification.remove(), 2000);
-            
-            // Reset form after 2 seconds
-            setTimeout(() => {
-                location.reload();
-            }, 2000);
         }
     </script>
 </body>
